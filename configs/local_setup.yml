@@ -1,5 +1,6 @@
 # Suggested data paths when using GPT-NeoX locally
 {
+  "global_num_gpus":1,
   "data-path": "data/enwik8/enwik8_text_document",
 
   # or for weighted datasets:
@@ -24,7 +25,7 @@
 
   "tensorboard-dir": "tensorboard",
   "log-dir": "logs",
-  "use_wandb": True,
+  "use_wandb": False,
   "wandb_host": "https://api.wandb.ai",
   "wandb_project": "neox"
 }
