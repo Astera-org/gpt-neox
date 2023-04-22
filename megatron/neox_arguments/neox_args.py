@@ -941,7 +941,7 @@ class NeoXArgsTraining(NeoXArgsTemplate):
     """
 
     gas: int = None
-    gradient_accumulation_steps: int = 1
+    #gradient_accumulation_steps: int = 1
     clip_grad: float = None
     """
     Gradient clipping based on global L2 norm.
