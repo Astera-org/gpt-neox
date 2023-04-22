@@ -611,8 +611,9 @@ def setup_model_and_optimizer(neox_args, use_cache=False, iteration=None):
             _model_params = param_groups if optimizer is None else None
             _lr_scheduler = lr_scheduler
 
-        neox_args.deepspeed_config["gradient_accumulation_steps"]=1
-        print("neox_args.deepspeed_config:", neox_args.deepspeed_config)
+        params=neox_args.deepspeed_config
+        params["gradient_accumulation_steps"]=1
+        print("neox_args.deepspeed_config:", params)
         print("neox_args", neox_args)
         
         model, optimizer, _, lr_scheduler = deepspeed.initialize(
@@ -622,7 +623,7 @@ def setup_model_and_optimizer(neox_args, use_cache=False, iteration=None):
             lr_scheduler=_lr_scheduler,
             dist_init_required=False,
             model_parameters=_model_params,
-            config_params=neox_args.deepspeed_config,
+            config_params=params,
             mpu=mpu if not neox_args.is_pipe_parallel else None,
         )
         model.total_params = get_total_params(model.module)
