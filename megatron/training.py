@@ -613,6 +613,7 @@ def setup_model_and_optimizer(neox_args, use_cache=False, iteration=None):
 
         params=neox_args.deepspeed_config
         params["gradient_accumulation_steps"]=1
+        params["train_batch_size"]=16
         print("neox_args.deepspeed_config:", params)
         print("neox_args", neox_args)
         
