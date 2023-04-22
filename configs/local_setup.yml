@@ -25,7 +25,7 @@
 
   "tensorboard-dir": "tensorboard",
   "log-dir": "logs",
-  "use_wandb": False,
+  "use_wandb": True,
   "wandb_host": "https://api.wandb.ai",
-  "wandb_project": "neox"
+  "wandb_project": "LMM"
 }

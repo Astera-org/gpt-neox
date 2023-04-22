@@ -612,10 +612,9 @@ def setup_model_and_optimizer(neox_args, use_cache=False, iteration=None):
             _lr_scheduler = lr_scheduler
 
         params=neox_args.deepspeed_config
-        params["gradient_accumulation_steps"]=1
-        params["train_batch_size"]=16
-        print("neox_args.deepspeed_config:", params)
-        print("neox_args", neox_args)
+        params["gradient_accumulation_steps"]=1 # JED figure out what is broken
+        params["train_batch_size"]=16 # JED figure out what is broken
+       
         
         model, optimizer, _, lr_scheduler = deepspeed.initialize(
             model=model,
