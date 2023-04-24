@@ -1,6 +1,7 @@
 # Suggested data paths when using GPT-NeoX locally
 {
   "global_num_gpus":1,
+  "num_gpus": 1,
   "data-path": "data/enwik8/enwik8_text_document",
 
   # or for weighted datasets:
